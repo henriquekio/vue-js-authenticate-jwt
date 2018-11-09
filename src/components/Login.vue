@@ -1,13 +1,23 @@
 <template>
-    $END$
+    <div class="container-login">
+        <form>
+
+        </form>
+    </div>
 </template>
 
 <script>
-  export default {
-    name: 'Login'
-  };
+export default {
+  name: 'Login',
+  data() {
+    return {
+      login: null,
+      senha: null,
+    };
+  },
+};
 </script>
 
-<style scoped>
+<style scoped="sass">
 
 </style>
