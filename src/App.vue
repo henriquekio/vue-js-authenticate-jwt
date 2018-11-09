@@ -7,10 +7,6 @@
         <router-view/>
     </div>
 </template>
-<script>
-/* eslint-disable import/no-unresolved */
-import '@/assets/sass/main.sass';
 
-</script>
 <style lang="sass">
 </style>
