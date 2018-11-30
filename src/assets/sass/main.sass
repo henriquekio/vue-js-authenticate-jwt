@@ -9,6 +9,13 @@ body
   height: 100%
   margin: 0
 
+a
+  text-decoration: none
+  color: #039be5
+
+#app
+  height: 100%
+
 %card
   -webkit-transition: -webkit-box-shadow .25s
   transition: -webkit-box-shadow .25s
@@ -33,6 +40,13 @@ body
   h3
     text-align: center
 
+.pull-right
+  float: right
+  display: block
+
+.pull-left
+  float: left
+  display: block
 
 
 //================FORMs================
@@ -40,7 +54,7 @@ body
   margin-bottom: 15px
   input
     width: 100%
-  
+
     border-radius: 4px
     box-shadow: none
     border: 1px solid #ccc
@@ -48,6 +62,12 @@ body
     height: 36px
     line-height: 1.4px
     display: block
+
+.container-btn-form
+  display: flex
+  width: 100%
+  .item
+    flex-grow: 1
 
 //==================Buttons==========
 %button
@@ -72,6 +92,10 @@ body
 .btn-default
   @extend %button
   background: #039be5
+
+.btn-success
+  @extend %button
+  background: #689f38
 
 .btn-wrap
   width: 100%
