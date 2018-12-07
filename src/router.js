@@ -11,7 +11,7 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
-    },{
+    }, {
       path: '/cadastro-usuario',
       name: 'cadastrar',
       component: Create,
