@@ -16,4 +16,7 @@ export default {
       this.token = response.data.token;
     });
   },
+  getAuthorizationHeader() {
+    return `Bearer ${this.token}`;
+  },
 };
