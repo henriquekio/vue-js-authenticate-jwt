@@ -1,9 +1,9 @@
 import Vue from 'vue';
+import resource from 'vue-resource';
 import App from './App.vue';
 import '@/assets/sass/main.sass';
 import router from './router';
 import store from './store';
-import resource from 'vue-resource';
 
 Vue.config.productionTip = false;
 Vue.use(resource);

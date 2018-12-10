@@ -1,29 +1,38 @@
 <template>
-    <div class="container-login">
-        <h3>Seja Bem vindo ao To do'it</h3>
-        <form>
-            <div class="input-default">
-                <input type="text" placeholder="Email">
-            </div>
-            <div class="input-default">
-                <input type="password" placeholder="Senha">
-            </div>
-            <button type="button" class="btn-default btn-wrap">Entrar</button>
-            <p>
-                <router-link to="/cadastro-usuario">Cadastre-se</router-link>
-            </p>
-        </form>
-    </div>
+  <div class="container-login">
+    <h3>Seja Bem vindo ao To do'it</h3>
+    <form>
+      <div class="input-default">
+        <input type="text" v-model="user.email" placeholder="Email">
+      </div>
+      <div class="input-default">
+        <input type="password" v-model="user.password" placeholder="Senha">
+      </div>
+      <button type="button" @click="login()" class="btn-default btn-wrap">Entrar</button>
+      <p>
+        <router-link to="/cadastro-usuario">Cadastre-se</router-link>
+      </p>
+    </form>
+  </div>
 </template>
 
 <script>
+import store from '../store';
+
 export default {
   name: 'Login',
   data() {
     return {
-      login: null,
-      senha: null,
+      user: {
+        email: null,
+        password: null,
+      },
     };
+  },
+  methods: {
+    login() {
+      store.dispatch('login', this.user);
+    },
   },
 };
 </script>
