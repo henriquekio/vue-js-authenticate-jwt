@@ -1,5 +1,5 @@
 <template>
-  <div class="container-flex" style="height: 100%">
+  <div class="container-flex-center-align" style="height: 100%">
     <div class="container-form">
       <h3>Cadastre-se =)</h3>
       <form>

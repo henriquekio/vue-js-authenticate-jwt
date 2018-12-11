@@ -33,9 +33,8 @@ export default {
   methods: {
     login() {
       store.dispatch('login', this.user).then(() => {
-        this.$router.push({ name: 'user.create' });
-      }, (fail) => {
-        console.log(fail);
+        this.$router.push({ name: 'tarefa.index' });
+      }, () => {
         swal('Opss', 'Houve uma falha ao realizar o login. Verifique seu nome de usuário e senha e tente novamente', 'error');
       });
     },

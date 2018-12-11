@@ -2,8 +2,9 @@ import Vue from 'vue';
 import resource from 'vue-resource';
 
 Vue.use(resource);
+require('./interceptors');
 
-const { Categoria } = Vue.resource(`${process.env.VUE_APP_URL}/categorias`);
-const { Tarefa } = Vue.resource(`${process.env.VUE_APP_URL}/tarefas`);
+const Categoria = Vue.resource(`${process.env.VUE_APP_URL}/categorias`);
+const Tarefa = Vue.resource(`${process.env.VUE_APP_URL}/tarefas`);
 
 export { Categoria, Tarefa };
