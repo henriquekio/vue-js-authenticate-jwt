@@ -18,7 +18,7 @@
         </div>
         <div class="container-btn-form">
           <div class="item">
-            <router-link class="btn-default" to="/">Voltar</router-link>
+            <router-link class="btn-default" :to="{name: 'home'}">Voltar</router-link>
           </div>
           <div class="item">
             <button @click="createUser" class="btn-success pull-right"

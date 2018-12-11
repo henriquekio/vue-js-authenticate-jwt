@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import swal from 'sweetalert';
 import store from '../store';
 
 export default {
@@ -31,7 +32,12 @@ export default {
   },
   methods: {
     login() {
-      store.dispatch('login', this.user);
+      store.dispatch('login', this.user).then(() => {
+        this.$router.push({ name: 'user.create' });
+      }, (fail) => {
+        console.log(fail);
+        swal('Opss', 'Houve uma falha ao realizar o login. Verifique seu nome de usuário e senha e tente novamente', 'error');
+      });
     },
   },
 };

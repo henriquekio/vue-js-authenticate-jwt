@@ -11,10 +11,12 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+      meta: { auth: false },
     }, {
       path: '/cadastro-usuario',
-      name: 'cadastrar',
+      name: 'user.create',
       component: Create,
+      meta: { auth: false },
     },
   ],
 });

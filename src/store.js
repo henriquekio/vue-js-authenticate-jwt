@@ -13,7 +13,7 @@ export default new Vuex.Store({
   },
   actions: {
     login(context, { email, password }) {
-      JwtService.accessToken(email, password);
+      return JwtService.accessToken(email, password);
     },
   },
   getters: {
