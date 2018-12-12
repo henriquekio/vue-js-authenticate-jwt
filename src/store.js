@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import JwtService from './services/JwtService';
-import { Tarefa, Categoria } from './services/Resource';
+import { Tarefa } from './services/Resource';
 
 Vue.use(Vuex);
 

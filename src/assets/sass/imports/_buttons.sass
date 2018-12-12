@@ -1,0 +1,30 @@
+//==================Buttons==========
+%button
+  text-decoration: none
+  color: #fff
+  background-color: #cccccc
+  text-align: center
+  letter-spacing: .5px
+  -webkit-transition: background-color .2s ease-out
+  transition: background-color .2s ease-out
+  border: none
+  border-radius: 2px
+  display: inline-block
+  height: 36px
+  line-height: 36px
+  padding: 0 16px
+  text-transform: uppercase
+  vertical-align: middle
+  -webkit-tap-highlight-color: transparent
+  cursor: pointer
+
+.btn-default
+  @extend %button
+  background: #039be5
+
+.btn-success
+  @extend %button
+  background: #689f38
+
+.btn-wrap
+  width: 100%
