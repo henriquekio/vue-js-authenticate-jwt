@@ -2,6 +2,7 @@ import Vue from 'vue';
 import resource from 'vue-resource';
 
 Vue.use(resource);
+require('./interceptors');
 
 // eslint-disable-next-line
 export class APIResourcesService {
@@ -10,5 +11,9 @@ export class APIResourcesService {
       email,
       password,
     });
+  }
+
+  static revokeTokenFromApi() {
+    return Vue.http.post(`${process.env.VUE_APP_URL}/logout`);
   }
 }

@@ -16,6 +16,12 @@ export default {
       this.token = response.data.token;
     });
   },
+  revokeToken() {
+    return APIResourcesService.revokeTokenFromApi().then((response) => {
+      sessionStorage.removeItem('token');
+      return response;
+    });
+  },
   getAuthorizationHeader() {
     return `Bearer ${this.token}`;
   },

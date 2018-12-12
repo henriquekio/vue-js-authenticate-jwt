@@ -3,10 +3,11 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Create from './views/usuario/Create.vue';
 import IndexUsuario from './views/tarefa/Index.vue';
+import store from './store';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -27,3 +28,13 @@ export default new Router({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  if (!store.state.auth.check && to.meta.auth) {
+    return router.push({ name: 'home' });
+  }
+
+  return next();
+});
+
+export default router;
