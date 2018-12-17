@@ -16,4 +16,8 @@ export class APIResourcesService {
   static revokeTokenFromApi() {
     return Vue.http.post(`${process.env.VUE_APP_URL}/logout`);
   }
+
+  static refreshTokenFromApi() {
+    return Vue.http(`${process.env.VUE_APP_URL}/refresh`);
+  }
 }

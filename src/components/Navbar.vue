@@ -31,7 +31,7 @@ export default {
     logout(event) {
       event.preventDefault();
       store.dispatch('logout');
-      // this.$router.push({ name: 'home' });
+      this.$router.push({ name: 'home' });
     },
   },
 };

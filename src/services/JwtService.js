@@ -5,14 +5,17 @@ export default {
   get token() {
     return sessionStorage.getItem('token');
   },
-
   // eslint-disable-next-line
   set token(token) {
     sessionStorage.setItem('token', token);
   },
-
   accessToken(email, password) {
     return APIResourcesService.getTokenFromApi(email, password).then((response) => {
+      this.token = response.data.token;
+    });
+  },
+  refreshToken() {
+    return APIResourcesService.refreshTokenFromApi().then((response) => {
       this.token = response.data.token;
     });
   },
