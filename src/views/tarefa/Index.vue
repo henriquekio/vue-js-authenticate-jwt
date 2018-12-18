@@ -1,7 +1,12 @@
 <template>
   <div class="container-fluid">
     <navbar></navbar>
-    <task-list></task-list>
+      <div class="container content">
+        <div class="row">
+          <h4 v-if="userData != null">Seja bem vindo {{ userData.name }}</h4>
+        </div>
+        <task-list></task-list>
+      </div>
   </div>
 </template>
 
@@ -12,7 +17,15 @@ import Navbar from '../../components/Navbar.vue';
 
 export default {
   name: 'Index',
-  components: { Navbar, TaskList },
+  components: {
+    Navbar,
+    TaskList,
+  },
+  computed: {
+    userData() {
+      return store.state.auth.user;
+    },
+  },
   created() {
     store.dispatch('getTasks');
   },

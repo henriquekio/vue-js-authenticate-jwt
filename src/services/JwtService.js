@@ -9,6 +9,14 @@ export default {
   set token(token) {
     sessionStorage.setItem('token', token);
   },
+  // eslint-disable-next-line
+  get user() {
+    return sessionStorage.getItem('user');
+  },
+  // eslint-disable-next-line
+  set user(user) {
+    sessionStorage.setItem('user', user);
+  },
   accessToken(email, password) {
     return APIResourcesService.getTokenFromApi(email, password).then((response) => {
       this.token = response.data.token;
@@ -22,6 +30,13 @@ export default {
   revokeToken() {
     return APIResourcesService.revokeTokenFromApi().then((response) => {
       sessionStorage.removeItem('token');
+      sessionStorage.removeItem('user');
+      return response;
+    });
+  },
+  getUserData() {
+    return APIResourcesService.getUserDataFromAPi().then((response) => {
+      this.user = response.data.user;
       return response;
     });
   },

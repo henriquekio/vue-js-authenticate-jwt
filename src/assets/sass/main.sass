@@ -1,7 +1,10 @@
+@import "imports/variables"
+@import "imports/grid"
 @import "imports/form"
 @import "imports/buttons"
 @import "imports/navbar"
 @import "imports/responsive"
+@import "imports/hellpers"
 
 *
   box-sizing: border-box
@@ -12,10 +15,9 @@ body, html
   background: #f3f3f3
   width: 100%
   height: 100%
-  margin: 0
   -webkit-font-smoothing: antialiased
   display: block
-
+  margin: 0
 a
   text-decoration: none
   color: #039be5
@@ -31,16 +33,6 @@ a
   -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)
 
-.container-flex-center-align
-  display: flex
-  align-items: center
-  justify-content: center
-
-.container-fluid
-  display: flex
-  width: 100%
-  margin-top: 5em
-
 .container-tasklist
   padding:  1em
   width: 100%
@@ -55,7 +47,7 @@ a
 .container-task
   @extend %card
   padding: 1em
-  width: 500px
+  width: 100%
   margin: 1em
   h1, h2, h3, h4, h5, h6
     margin: 0.4em
@@ -87,10 +79,5 @@ a
   h3
     text-align: center
 
-.pull-right
-  float: right
-  display: block
-
-.pull-left
-  float: left
-  display: block
+.content
+  padding-top: 4em

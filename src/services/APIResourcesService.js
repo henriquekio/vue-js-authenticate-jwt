@@ -18,6 +18,10 @@ export class APIResourcesService {
   }
 
   static refreshTokenFromApi() {
-    return Vue.http(`${process.env.VUE_APP_URL}/refresh`);
+    return Vue.http.post(`${process.env.VUE_APP_URL}/refresh`);
+  }
+
+  static getUserDataFromAPi() {
+    return Vue.http.get(`${process.env.VUE_APP_URL}/user-data`);
   }
 }
