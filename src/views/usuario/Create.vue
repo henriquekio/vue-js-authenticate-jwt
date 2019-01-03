@@ -7,17 +7,17 @@
             <h4 class="text-center">Cadastre-se =)</h4>
             <form class="row">
               <div class="input-field col m12">
-                <input type="text" v-model="name" placeholder="Digite seu nome">
+                <input type="text" v-model="user.name" placeholder="Digite seu nome">
               </div>
               <div class="input-field col m12">
-                <input type="email" name="email" v-model="email" placeholder="Digite seu email">
+                <input type="email" name="email" v-model="user.email" placeholder="Digite seu email">
               </div>
               <div class="input-field col m12">
-                <input type="password" v-model="password" placeholder="Digite sua senha">
+                <input type="password" v-model="user.password" placeholder="Digite sua senha">
               </div>
               <div class="input-field col m12">
                 <input placeholder="Confirme sua senha" type="password"
-                       v-model="password_confirmation">
+                       v-model="user.password_confirmation">
               </div>
               <div class="row">
                 <div class="col m4">
@@ -39,34 +39,32 @@
 
 <script>
 import swal from 'sweetalert';
+import store from '../../store';
 
 export default {
   name: 'Create',
   data() {
     return {
-      name: null,
-      email: null,
-      password: null,
-      password_confirmation: null,
+      user: {
+        name: null,
+        email: null,
+        password: null,
+        password_confirmation: null,
+      },
     };
   },
   methods: {
     createUser() {
       const self = this;
-      this.$http.post('http://api.localhost/api/cadastrar-usuario', {
-        name: this.name,
-        email: this.email,
-        password: this.password,
-        password_confirmation: this.password_confirmation,
-      })
-        .then(() => {
-          swal('Cadastrado com sucesso', '', 'success')
-            .then(() => {
-              self.$router.push({ name: 'home' });
-            });
-        }, () => {
-          swal('Houve um erro ao cadastrar o usuário.', 'Por favor, tente novamente mais tarde.', 'error');
-        });
+
+      store.dispatch('createUser', this.user).then(() => {
+        swal('Cadastrado com sucesso', '', 'success')
+          .then(() => {
+            self.$router.push({ name: 'home' });
+          });
+      }, () => {
+        swal('Houve um erro ao cadastrar o usuário.', 'Por favor, tente novamente mais tarde.', 'error');
+      });
     },
   },
 };

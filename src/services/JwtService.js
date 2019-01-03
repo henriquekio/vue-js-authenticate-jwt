@@ -41,6 +41,9 @@ export default {
       return response;
     });
   },
+  createNewUser(user){
+    return APIResourcesService.createNewUser(user);
+  },
   getAuthorizationHeader() {
     return `Bearer ${this.token}`;
   },

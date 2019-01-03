@@ -27,6 +27,9 @@ export default new Vuex.Store({
       // eslint-disable-next-line
       state.auth.user = user;
     },
+    setNewTask(state, task) {
+      state.tasks.push(task);
+    },
     authenticated(state) {
       // eslint-disable-next-line
       state.auth.check = true;
@@ -56,6 +59,15 @@ export default new Vuex.Store({
       Tarefa.query().then((success) => {
         context.commit('setTaskState', success.data);
       });
+    },
+    createTask(context, tarefa) {
+      return Tarefa.save(tarefa).then((response) => {
+        context.commit('setNewTask', response.data);
+        return response;
+      });
+    },
+    createUser(context, user) {
+      return JwtService.createNewUser(user);
     },
     getCategorias(context) {
       Categoria.query().then((success) => {

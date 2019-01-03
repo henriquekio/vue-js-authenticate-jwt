@@ -24,4 +24,8 @@ export class APIResourcesService {
   static getUserDataFromAPi() {
     return Vue.http.get(`${process.env.VUE_APP_URL}/user-data`);
   }
+
+  static createNewUser(user) {
+    return Vue.http.post(`${process.env.VUE_APP_URL}/cadastrar-usuario`, user);
+  }
 }
