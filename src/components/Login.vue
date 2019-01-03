@@ -1,11 +1,11 @@
 <template>
   <div class="container-login">
-    <h3>Seja Bem vindo ao To do'it</h3>
+    <h4>Seja Bem vindo ao To do'it</h4>
     <form>
-      <div class="input-default">
+      <div class="input-field">
         <input type="text" v-model="user.email" placeholder="Email">
       </div>
-      <div class="input-default">
+      <div class="input-field">
         <input type="password" v-model="user.password" placeholder="Senha">
       </div>
       <button type="button" @click="login()" class="btn-default btn-wrap">Entrar</button>

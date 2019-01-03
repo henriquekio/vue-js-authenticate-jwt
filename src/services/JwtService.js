@@ -11,11 +11,12 @@ export default {
   },
   // eslint-disable-next-line
   get user() {
-    return sessionStorage.getItem('user');
+    const user = sessionStorage.getItem('user');
+    return JSON.parse(user);
   },
   // eslint-disable-next-line
   set user(user) {
-    sessionStorage.setItem('user', user);
+    sessionStorage.setItem('user', JSON.stringify(user));
   },
   accessToken(email, password) {
     return APIResourcesService.getTokenFromApi(email, password).then((response) => {

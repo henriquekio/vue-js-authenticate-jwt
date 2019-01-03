@@ -11,7 +11,7 @@ export default new Vuex.Store({
     categorias: [],
     auth: {
       check: JwtService.token !== null,
-      user: JwtService.token,
+      user: JwtService.user,
     },
   },
   mutations: {

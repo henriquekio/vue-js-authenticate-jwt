@@ -9,7 +9,7 @@
           <router-link :to="{name: 'tarefa.index'}">Home</router-link>
         </li>
         <li>
-          <a href="#">Nova Tarefa</a>
+          <router-link :to="{ name: 'tarefa.create' }">Nova Tarefa</router-link>
         </li>
         <li>
           <a href="#">Tarefa Realizada</a>

@@ -1,5 +1,4 @@
 @import "imports/variables"
-@import "imports/grid"
 @import "imports/form"
 @import "imports/buttons"
 @import "imports/navbar"
@@ -20,7 +19,7 @@ body, html
   margin: 0
 a
   text-decoration: none
-  color: #039be5
+  color: $color-primary !important
 
 #app
   height: 100%
@@ -47,11 +46,11 @@ a
 .container-task
   @extend %card
   padding: 1em
+  background: white
   width: 100%
   margin: 1em
   h1, h2, h3, h4, h5, h6
     margin: 0.4em
-
 
 .home
   height: 100vmin

@@ -1,19 +1,15 @@
 //================FORMs================
-.input-default
-  margin-bottom: 15px
-  input
-    width: 100%
+.input-field label
+  color: $color-text !important
+  font-weight: 600
 
-    border-radius: 4px
-    box-shadow: none
-    border: 1px solid #ccc
-    padding: 0.5em
-    height: 36px
-    line-height: 1.4px
-    display: block
+.input-field input:focus + label
+  color: $color-primary !important
 
-.container-btn-form
-  display: flex
-  width: 100%
-  .item
-    flex-grow: 1
+.input-field input:focus, .input-field textarea:focus
+  border-bottom: 1px solid $color-primary !important
+  box-shadow: 0 1px 0 0 $color-primary !important
+
+.input-field .prefix.active
+  color: $color-primary !important
+

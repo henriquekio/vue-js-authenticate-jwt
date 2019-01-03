@@ -3,7 +3,7 @@
     <navbar></navbar>
       <div class="container content">
         <div class="row">
-          <h4 v-if="userData != null">Seja bem vindo {{ userData.name }}</h4>
+          <h6 v-if="userData != null">Seja bem vindo {{ userData.name }}</h6>
         </div>
         <task-list></task-list>
       </div>
