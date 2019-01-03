@@ -30,6 +30,9 @@
             </div>
           </form>
         </div>
+        <div class="margin-top-20">
+          <TaskList></TaskList>
+        </div>
       </div>
     </div>
   </div>
@@ -39,10 +42,11 @@
 import Navbar from '@/components/Navbar.vue';
 import store from '../../store';
 import swal from 'sweetalert';
+import TaskList from '../../components/TaskList.vue';
 
 export default {
   name: 'Create',
-  components: { Navbar },
+  components: { TaskList, Navbar },
   data() {
     return {
       tarefa: {

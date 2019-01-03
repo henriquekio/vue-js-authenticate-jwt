@@ -10,7 +10,7 @@
                 <input type="text" v-model="user.name" placeholder="Digite seu nome">
               </div>
               <div class="input-field col m12">
-                <input type="email" name="email" v-model="user.email" placeholder="Digite seu email">
+                <input placeholder="Digite seu email" type="email" v-model="user.email">
               </div>
               <div class="input-field col m12">
                 <input type="password" v-model="user.password" placeholder="Digite sua senha">

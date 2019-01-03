@@ -1,14 +1,18 @@
 <template>
-  <div class="container-tasklist">
+  <div class="container content">
     <div v-if="tasks.length > 0">
-      <div class="container-task" v-for="task in tasks" :key="task.id">
-        <h5>{{task.descricao}} <br>
-          <small>{{task.data_conclusao}}</small>
-        </h5>
-      </div>
+      <ul class="collection">
+        <li class="collection-item avatar" v-for="task in tasks" :key="task.id">
+          <span class="title">{{task.descricao}}</span>
+          <p>{{task.data_conclusao}}</p>
+          <a href="#" v-on:click.prevent class="secondary-content">
+            <i class="material-icons">check_box_outline_blank</i>
+          </a>
+        </li>
+      </ul>
     </div>
     <div v-else class="container-task">
-      <h5 class="text-center">Não foram cadastradas tarefas.</h5>
+      <h6 class="text-center">Não foram cadastradas tarefas.</h6>
     </div>
   </div>
 </template>
