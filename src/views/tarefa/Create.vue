@@ -2,20 +2,21 @@
   <div class="row">
     <navbar></navbar>
     <div class="container content">
-      <div class="card">
-        <div class="row">
-          <h4>Adicione a tarefa</h4>
-          <div class="">
-            <form>
+      <div class="col m8 offset-m2">
+        <div class="card-panel">
+          <h5 class="text-center">Adicione a tarefa</h5>
+          <form class="row" v-on:submit.prevent >
+            <div class="input-field">
               <label for="descricao">Descricao</label>
               <input id="descricao" type="text">
+            </div>
+            <div class="wrapper-select-default">
               <label for="categoria">Categoria</label>
-              <select name="categoria" id="categoria">
+              <select name="categoria" id="categoria" class="browser-default">
                 <option disabled selected>Selecione uma opção</option>
               </select>
-              <input type="date" id="">
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
